@@ -1,0 +1,25 @@
+<div class="input-group">
+  <span class="input-group-btn">
+    <button id="subtractButton"
+            [ngClass]="['btn', buttonClass]"
+            [disabled]="disabledSubtractButton"
+            (click)="percentageSubtraction()">
+      <i class="fa fa-minus"></i>
+    </button>
+  </span>
+  <input [(ngModel)]="percentageProgress"
+         id="percentProgress"
+         (ngModelChange)="handleChangedPercentageProgress($event)"
+         [ngClass]="{'is-invalid': percentageProgress > 100 || percentageProgress < 0}"
+         type="number"
+         class="form-control"
+         placeholder="Percentage progress">
+  <span class="input-group-btn">
+    <button id="sumButton"
+            [ngClass]="['btn', buttonClass]"
+            [disabled]="disabledAddButton"
+            (click)="percentageSum()">
+      <i class="fa fa-plus"></i>
+    </button>
+  </span>
+</div>
