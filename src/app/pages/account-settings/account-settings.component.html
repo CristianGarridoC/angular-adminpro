@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-5">
+    <div class="card">
+      <div class="card-body">
+        <h3>Select sidebar theme</h3>
+
+        <div class="r-panel-body">
+          <ul id="themecolors" class="m-t-20" style="padding: 0 1.2rem;">
+            <li><b>Light sidebar</b></li>
+            <li>
+              <a (click)="changeTheme('default')"
+                 data-theme="default"
+                 [ngClass]="{'working': defaultTheme === 'default'}"
+                 class="selector default-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('green')"
+                 data-theme="green"
+                 [ngClass]="{'working': defaultTheme === 'green'}"
+                 class="selector green-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('red')"
+                 data-theme="red"
+                 [ngClass]="{'working': defaultTheme === 'red'}"
+                 class="selector red-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('blue')"
+                 data-theme="blue"
+                 [ngClass]="{'working': defaultTheme === 'blue'}"
+                 class="selector blue-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('purple')"
+                 data-theme="purple"
+                 [ngClass]="{'working': defaultTheme === 'purple'}"
+                 class="selector purple-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('megna')"
+                 data-theme="megna"
+                 [ngClass]="{'working': defaultTheme === 'megna'}"
+                 class="selector megna-theme">
+              </a>
+            </li>
+
+            <li class="d-block m-t-30"><b>Dark sidebar</b></li>
+            <li>
+              <a (click)="changeTheme('default-dark')"
+                 data-theme="default-dark"
+                 [ngClass]="{'working': defaultTheme === 'default-dark'}"
+                 class="selector default-dark-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('green-dark')"
+                 data-theme="green-dark"
+                 [ngClass]="{'working': defaultTheme === 'green-dark'}"
+                 class="selector green-dark-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('red-dark')"
+                 data-theme="red-dark"
+                 [ngClass]="{'working': defaultTheme === 'red-dark'}"
+                 class="selector red-dark-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('blue-dark')"
+                 data-theme="blue-dark"
+                 [ngClass]="{'working': defaultTheme === 'blue-dark'}"
+                 class="selector blue-dark-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('purple-dark')"
+                 data-theme="purple-dark"
+                 [ngClass]="{'working': defaultTheme === 'purple-dark'}"
+                 class="selector purple-dark-theme">
+              </a>
+            </li>
+            <li>
+              <a (click)="changeTheme('megna-dark')"
+                 data-theme="megna-dark"
+                 [ngClass]="{'working': defaultTheme === 'megna-dark'}"
+                 class="selector megna-dark-theme">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
