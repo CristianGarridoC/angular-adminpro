@@ -19,11 +19,11 @@
         </li>
         <li class="nav-devider"></li>
         <li class="nav-small-cap">PERSONAL</li>
-        <li *ngFor="let menuItem of menuItems">
+        <li class="menuItems" *ngFor="let menuItem of menuItems">
           <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
             <i [ngClass]="[menuItem.icon]"></i>
-            <span class="hide-menu">{{menuItem.title}}
-              <span class="label label-rouded label-themecolor pull-right">{{menuItem.subMenuItems.length}}</span>
+            <span class="menu-item-title hide-menu">{{menuItem.title}}
+              <span class="menu-items-count label label-rouded label-themecolor pull-right">{{menuItem.subMenuItems.length}}</span>
             </span>
           </a>
           <ul aria-expanded="false" class="collapse">
