@@ -14,11 +14,15 @@ export class SidebarService {
       subMenuItems: [
         {
           title: 'Main',
-          path: '/'
+          path: '/dashboard'
         },
         {
           title: 'ProgressBar',
           path: 'progress'
+        },
+        {
+          title: 'Rxjs',
+          path: 'rxjs'
         }
       ]
     }
