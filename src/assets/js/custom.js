@@ -5,12 +5,15 @@ Email: niravjoshi87@gmail.com
 File: js
 */
 
-const customInitFunction = () => {
+window.customHidePreloader = () => {
+  $(function() {
+    $(".preloader").fadeOut();
+  });
+}
+
+window.customInitFunction = () => {
   $(function() {
     "use strict";
-    $(function() {
-      $(".preloader").fadeOut();
-    });
     jQuery(document).on('click', '.mega-dropdown', function(e) {
       e.stopPropagation()
     });
@@ -82,23 +85,6 @@ const customInitFunction = () => {
     }).trigger('blur');
 
     // ==============================================================
-    // Auto select left navbar
-    // ==============================================================
-    $(function() {
-      var url = window.location;
-      var element = $('ul#sidebarnav a').filter(function() {
-        return this.href == url;
-      }).addClass('active').parent().addClass('active');
-      while (true) {
-        if (element.is('li')) {
-          element = element.parent().addClass('in').parent().addClass('active');
-        } else {
-          break;
-        }
-      }
-
-    });
-    // ==============================================================
     //tooltip
     // ==============================================================
     $(function() {
@@ -133,8 +119,6 @@ const customInitFunction = () => {
       $(this).toggleClass("task-done");
     });
 
-
-
     // ==============================================================
     // Collapsable cards
     // ==============================================================
@@ -157,6 +141,4 @@ const customInitFunction = () => {
     });
 
   });
-};
-
-customInitFunction();
+}
