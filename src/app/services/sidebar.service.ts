@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {IMenu} from "./Interfaces/IMenu";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ export class SidebarService {
 
   constructor() { }
 
-  public menuItems: any[] = [
+  public menuItems: IMenu[] = [
     {
       title: 'Dashboard',
       icon: 'mdi mdi-gauge',
