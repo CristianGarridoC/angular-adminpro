@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {interval, map, Observable, retry, Subscription, take} from "rxjs";
+import {filter, interval, map, Observable, retry, Subscription, take} from "rxjs";
 
 @Component({
   selector: 'app-rxjs',
@@ -32,10 +32,11 @@ export class RxjsComponent implements OnInit, OnDestroy {
   }
 
   protected returnMappedObservable(): Observable<number>{
-    return interval(1000)
+    return interval(500)
            .pipe(
-             take(4),
-             map(value => value + 1)
+             take(10),
+             map(value => value + 1),
+             filter(value => value % 2 === 0)
            );
   }
 
