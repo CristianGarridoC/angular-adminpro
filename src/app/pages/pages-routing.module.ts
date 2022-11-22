@@ -11,10 +11,10 @@ const routes: Routes = [
     path: 'dashboard',
     component: PagesComponent,
     children: [
-      { path: '', component: DashboardComponent },
-      { path: 'progress', component: ProgressComponent },
-      { path: 'account-settings', component: AccountSettingsComponent },
-      { path: 'rxjs', component: RxjsComponent }
+      { path: '', component: DashboardComponent, data: { title: 'Dashboard' } },
+      { path: 'progress', component: ProgressComponent, data: { title: 'Progress' } },
+      { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Account settings' } },
+      { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJS' } }
     ]
   }
 ];
