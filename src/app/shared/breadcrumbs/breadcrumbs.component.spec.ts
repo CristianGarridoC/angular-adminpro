@@ -24,9 +24,11 @@ describe('BreadCrumbs', () => {
     (routerService as any).events = scheduled([routerEvent], asyncScheduler);
   };
 
-  beforeEach(() => MockBuilder(BreadcrumbsComponent, SharedModule).provide({ provide: Router, useValue: routerService }));
+  beforeEach(() => MockBuilder(BreadcrumbsComponent, SharedModule)
+                          .provide({ provide: Router, useValue: routerService })
+  );
   beforeEach(() => {
-    fixture = MockRender(BreadcrumbsComponent);
+    fixture = MockRender(BreadcrumbsComponent, null, false);
     component = fixture.point.componentInstance;
     debugElement = fixture.debugElement;
   });
@@ -37,9 +39,9 @@ describe('BreadCrumbs', () => {
 
   it('should render the current title of the component', fakeAsync(() => {
     scheduleRouterEvent('test');
-    component.ngOnInit();
+    fixture.detectChanges(); // To trigger ngOnInit
     tick();
-    fixture.detectChanges();
+    fixture.detectChanges(); // To detect changes in the UI
     const h3Title = debugElement.nativeElement.querySelector('h3.text-themecolor');
     const liTitle = debugElement.nativeElement.querySelector('li.breadcrumb-item.active');
     expect(h3Title.textContent).toBe('test');
@@ -49,9 +51,9 @@ describe('BreadCrumbs', () => {
 
   it('should render the title even if it does not have one', fakeAsync(() => {
     scheduleRouterEvent(null);
-    component.ngOnInit();
+    fixture.detectChanges();// To trigger ngOnInit
     tick();
-    fixture.detectChanges();
+    fixture.detectChanges();// To detect changes in the UI
     const h3Title = debugElement.nativeElement.querySelector('h3.text-themecolor');
     const liTitle = debugElement.nativeElement.querySelector('li.breadcrumb-item.active');
     expect(h3Title).toBeFalsy();
