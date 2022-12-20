@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivationEnd, Router} from "@angular/router";
 import {filter, map, Subscription, take} from "rxjs";
 
@@ -6,13 +6,15 @@ import {filter, map, Subscription, take} from "rxjs";
   selector: 'app-breadcrumbs',
   templateUrl: './breadcrumbs.component.html'
 })
-export class BreadcrumbsComponent implements  OnDestroy{
+export class BreadcrumbsComponent implements  OnDestroy, OnInit {
   protected title: string = '';
   protected subscriptions: Subscription[] = [];
 
   constructor(
     private readonly router: Router
-  ) {
+  ) {}
+
+  ngOnInit(): void {
     this.subscriptions.push(this.setTitlePage());
   }
 
