@@ -2,7 +2,7 @@ import {MockBuilder, MockedComponentFixture, MockRender} from "ng-mocks";
 import {SidebarComponent} from "./sidebar.component";
 import {SharedModule} from "../shared.module";
 import {DebugElement} from "@angular/core";
-import {IMenu} from "../../services/Interfaces/IMenu";
+import {IMenu} from "../../interfaces/IMenu";
 
 describe('SidebarComponent', function () {
   let fixture: MockedComponentFixture<SidebarComponent>;
