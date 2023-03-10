@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {IMenu} from "./Interfaces/IMenu";
+import {IMenu} from "../interfaces/IMenu";
 
 @Injectable({
   providedIn: 'root'
